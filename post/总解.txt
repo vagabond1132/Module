@@ -1,0 +1,632 @@
+	常用 api接口;
+
+		1.
+			Detect API
+				描述
+					调用者提供图片文件或者图片URL，进行人脸检测和人脸分析。识别出的人脸会给出face_token，用于后续的人脸比对等操作。请注意，只对人脸包围盒面积最大的5个人脸进行分析，其他人脸可以使用Face Analyze API进行分析。如果您需要使用检测出的人脸于后续操作，建议将对应face_token添加到FaceSet中。如果一个face_token连续72小时没有存放在任意FaceSet中，则该face_token将会失效。如果对同一张图片进行多次人脸检测，同一个人脸得到的face_token是不同的。
+				图片要求
+					图片格式：JPG(JPEG)，PNG
+					图片像素尺寸：最小48*48像素，最大4096*4096像素
+					图片文件大小：2MB
+					最小人脸像素尺寸： 系统能够检测到的人脸框为一个正方形，正方形边长的最小值为图像短边长度的48分之一，最小值不低于48像素。 例如图片为 4096*3200 像素，则最小人脸像素尺寸为 66*66 像素。
+				更新日志
+					2017年3月9日：人脸检测算法升级；提供了眼睛状态检测替换是否戴眼镜的检测；人脸模糊检测升级。
+
+				调用URL
+					https://api-cn.faceplusplus.com/facepp/v3/detect
+
+				调用方法
+					POST
+
+
+
+
+
+
+		2.
+			Compare API
+				描述
+					将两个人脸进行比对，来判断是否为同一个人。支持传两张图片进行比对，或者一张图片与一个已知的face_token比对，也支持两个face_token进行比对。使用图片进行比对时会选取图片中检测到人脸尺寸最大的一个人脸。
+				
+				图片要求
+					图片格式：JPG(JPEG)，PNG
+					图片像素尺寸：最小48*48像素，最大4096*4096像素
+					图片文件大小：2MB
+					最小人脸像素尺寸： 系统能够检测到的人脸框为一个正方形，正方形边长的最小值为150像素。
+
+				调用URL
+					https://api-cn.faceplusplus.com/facepp/v3/compare
+				调用方法
+				POST
+
+
+					-----	 face 图像集合;
+		3. 
+			FaceSet AddFace API
+				描述
+					为一个已经创建的FaceSet添加人脸标识face_token。一个FaceSet最多存储1,000个face_token。
+				调用URL
+					https://api-cn.faceplusplus.com/facepp/v3/faceset/addface
+				调用方法
+					POST
+
+
+		4.
+			FaceSet RemoveFace API
+				描述
+					移除一个FaceSet中的某些或者全部face_token
+				调用URL
+					https://api-cn.faceplusplus.com/facepp/v3/faceset/removeface
+				调用方法
+					POST
+
+
+
+		5.	
+			FaceSet Update API
+				描述
+					更新一个人脸集合的属性
+				调用URL
+					https://api-cn.faceplusplus.com/facepp/v3/faceset/update
+				调用方法
+					POST
+
+
+		6.
+			FaceSet Delete API
+				描述
+					删除一个人脸集合。
+				调用URL
+					https://api-cn.faceplusplus.com/facepp/v3/faceset/delete
+				调用方法
+					POST
+
+
+
+
+
+
+
+测试参数:  -- 使用 vagabond132@gmail.com  注册邮箱;
+	API key:
+		Dec6OnZZQ3nKa7ZU0UDwcNe_xu1aeotd
+
+	API Secret:
+		nyhYWQ6potydeDJn9rL3gtFWoijU6wV4
+
+
+
+	注释注意点;
+
+		Linux / Mac 等测试  可以使用 curl 工具： 测试示例如下;
+			curl -X POST "https://api-cn.faceplusplus.com/facepp/v3/faceset/delete" \
+					-F "api_key=<api_key>" \
+					-F "api_secret=<api_secret>" \ 
+					-F "outer_id=newfaceset"
+
+
+		C++  代码编写:  可以使用 models 模块下的HttpClient类;  
+			 调用 Post接口即可;
+			 	char cookiesdir[512];
+			 	GETCURRENTDIR(cookiesdir);  
+
+			 	chttp.port(Url, poststr, cookiesdir, recvjson) ; //  其中 cook  可设置为  ""
+
+
+测试:
+
+face create api:
+	请求:
+		curl -X POST "https://api-cn.faceplusplus.com/facepp/v3/faceset/create" -F "api_key=Dec6OnZZQ3nKa7ZU0UDwcNe_xu1aeotd" -F "api_secret=nyhYWQ6potydeDJn9rL3gtFWoijU6wV4" 
+
+	返回:
+		{"faceset_token": "3a08e1ea1eb5fe4dc8f355fad73f6f65", "time_used": 64, "face_count": 0, "face_added": 0, "request_id": "1489561313,d75e021c-0c7e-4a38-8cba-bbf92f2d192e", "outer_id": "", "failure_detail": []}
+
+				faceset_token:	FaceSet的标示;
+				time_used:		整个请求话费的时间， 单位为毫秒;
+				face_count:		操作结束后FaceSet中的face_token总数量;
+				face_added: 	本次操作成功加入FaceSet的face_token数量;
+				request_id:		用于区分每一次请求的唯一字符串;
+				outer_id:		用户自定义的FaceSet标示， 如果未定义则返回为空
+				failure_detail: 无法被加入FaceSet的face_token以及原因
+
+
+Detect API
+	请求:
+		curl -X POST "https://api-cn.faceplusplus.com/facepp/v3/detect"   \
+		-F "api_key=Dec6OnZZQ3nKa7ZU0UDwcNe_xu1aeotd" \
+		-F "api_secret=nyhYWQ6potydeDJn9rL3gtFWoijU6wV4" \
+		-F "image_file=@maomao.jpeg" \
+		-F "return_landmark=1" \
+		-F "return_attributes=gender,age"
+
+			return_landmark：		是否检测并返回人脸五官和轮廓的83个关键点。
+									1:检测
+									0:不检测
+									注：默认值为0
+
+			return_attributes		是否检测并返回根据人脸特征判断出的年龄，性别，微笑、人脸质量等属性，需要将需要检测的属性组织成一个用逗号分隔的字符串。目前支持：gender,age,smiling,headpose,facequality,blur,eyestatus
+
+	返回:
+		{
+    "image_id": "rFqJbq3H+jXXLQI7Q/dDIw==", 
+    "request_id": "1489564149,637d39ce-5500-4742-9c09-ed707377ee16", 
+    "time_used": 271, 
+    "faces": [
+        {
+            "landmark": {
+                "mouth_upper_lip_left_contour2": {
+                    "y": 359, 
+                    "x": 463
+                }, 
+                "mouth_upper_lip_top": {
+                    "y": 358, 
+                    "x": 481
+                }, 
+                "mouth_upper_lip_left_contour1": {
+                    "y": 356, 
+                    "x": 473
+                }, 
+                "left_eye_upper_left_quarter": {
+                    "y": 279, 
+                    "x": 439
+                }, 
+                "left_eyebrow_lower_middle": {
+                    "y": 257, 
+                    "x": 443
+                }, 
+                "mouth_upper_lip_left_contour3": {
+                    "y": 364, 
+                    "x": 468
+                }, 
+                "left_eyebrow_lower_left_quarter": {
+                    "y": 259, 
+                    "x": 432
+                }, 
+                "right_eyebrow_lower_left_quarter": {
+                    "y": 253, 
+                    "x": 511
+                }, 
+                "right_eye_pupil": {
+                    "y": 276, 
+                    "x": 522
+                }, 
+                "mouth_lower_lip_right_contour1": {
+                    "y": 365, 
+                    "x": 498
+                }, 
+                "mouth_lower_lip_left_contour2": {
+                    "y": 369, 
+                    "x": 462
+                }, 
+                "mouth_lower_lip_right_contour3": {
+                    "y": 374, 
+                    "x": 494
+                }, 
+                "mouth_lower_lip_right_contour2": {
+                    "y": 371, 
+                    "x": 506
+                }, 
+                "contour_chin": {
+                    "y": 408, 
+                    "x": 490
+                }, 
+                "contour_left9": {
+                    "y": 404, 
+                    "x": 471
+                }, 
+                "left_eye_lower_right_quarter": {
+                    "y": 288, 
+                    "x": 456
+                }, 
+                "mouth_lower_lip_top": {
+                    "y": 366, 
+                    "x": 481
+                }, 
+                "right_eyebrow_upper_middle": {
+                    "y": 240, 
+                    "x": 524
+                }, 
+                "right_eyebrow_left_corner": {
+                    "y": 253, 
+                    "x": 497
+                }, 
+                "right_eye_lower_right_quarter": {
+                    "y": 280, 
+                    "x": 533
+                }, 
+                "right_eye_bottom": {
+                    "y": 282, 
+                    "x": 524
+                }, 
+                "contour_left7": {
+                    "y": 380, 
+                    "x": 445
+                }, 
+                "contour_left6": {
+                    "y": 366, 
+                    "x": 435
+                }, 
+                "contour_left5": {
+                    "y": 351, 
+                    "x": 428
+                }, 
+                "contour_left4": {
+                    "y": 334, 
+                    "x": 422
+                }, 
+                "contour_left3": {
+                    "y": 318, 
+                    "x": 417
+                }, 
+                "contour_left2": {
+                    "y": 301, 
+                    "x": 414
+                }, 
+                "contour_left1": {
+                    "y": 284, 
+                    "x": 413
+                }, 
+                "left_eye_lower_left_quarter": {
+                    "y": 288, 
+                    "x": 440
+                }, 
+                "contour_right1": {
+                    "y": 277, 
+                    "x": 575
+                }, 
+                "contour_right3": {
+                    "y": 314, 
+                    "x": 574
+                }, 
+                "contour_right2": {
+                    "y": 296, 
+                    "x": 575
+                }, 
+                "mouth_left_corner": {
+                    "y": 363, 
+                    "x": 455
+                }, 
+                "contour_right4": {
+                    "y": 333, 
+                    "x": 570
+                }, 
+                "contour_right7": {
+                    "y": 382, 
+                    "x": 543
+                }, 
+                "left_eyebrow_left_corner": {
+                    "y": 261, 
+                    "x": 422
+                }, 
+                "nose_right": {
+                    "y": 330, 
+                    "x": 508
+                }, 
+                "nose_tip": {
+                    "y": 324, 
+                    "x": 481
+                }, 
+                "contour_right5": {
+                    "y": 351, 
+                    "x": 565
+                }, 
+                "nose_contour_lower_middle": {
+                    "y": 341, 
+                    "x": 483
+                }, 
+                "right_eye_top": {
+                    "y": 270, 
+                    "x": 522
+                }, 
+                "mouth_lower_lip_left_contour3": {
+                    "y": 373, 
+                    "x": 470
+                }, 
+                "right_eye_right_corner": {
+                    "y": 276, 
+                    "x": 540
+                }, 
+                "mouth_upper_lip_right_contour1": {
+                    "y": 357, 
+                    "x": 488
+                }, 
+                "mouth_upper_lip_right_contour2": {
+                    "y": 360, 
+                    "x": 502
+                }, 
+                "right_eyebrow_lower_right_quarter": {
+                    "y": 250, 
+                    "x": 538
+                }, 
+                "left_eye_left_corner": {
+                    "y": 285, 
+                    "x": 433
+                }, 
+                "mouth_right_corner": {
+                    "y": 365, 
+                    "x": 517
+                }, 
+                "right_eye_lower_left_quarter": {
+                    "y": 282, 
+                    "x": 514
+                }, 
+                "left_eyebrow_right_corner": {
+                    "y": 257, 
+                    "x": 467
+                }, 
+                "left_eyebrow_lower_right_quarter": {
+                    "y": 257, 
+                    "x": 455
+                }, 
+                "right_eye_center": {
+                    "y": 277, 
+                    "x": 523
+                }, 
+                "left_eye_pupil": {
+                    "y": 283, 
+                    "x": 449
+                }, 
+                "nose_left": {
+                    "y": 334, 
+                    "x": 459
+                }, 
+                "mouth_lower_lip_left_contour1": {
+                    "y": 364, 
+                    "x": 468
+                }, 
+                "left_eye_upper_right_quarter": {
+                    "y": 280, 
+                    "x": 457
+                }, 
+                "right_eyebrow_lower_middle": {
+                    "y": 251, 
+                    "x": 525
+                }, 
+                "left_eye_center": {
+                    "y": 284, 
+                    "x": 448
+                }, 
+                "contour_left8": {
+                    "y": 393, 
+                    "x": 457
+                }, 
+                "contour_right9": {
+                    "y": 404, 
+                    "x": 511
+                }, 
+                "right_eye_left_corner": {
+                    "y": 281, 
+                    "x": 506
+                }, 
+                "left_eyebrow_upper_left_quarter": {
+                    "y": 251, 
+                    "x": 431
+                }, 
+                "left_eye_bottom": {
+                    "y": 289, 
+                    "x": 448
+                }, 
+                "left_eye_right_corner": {
+                    "y": 286, 
+                    "x": 464
+                }, 
+                "right_eyebrow_upper_left_quarter": {
+                    "y": 243, 
+                    "x": 509
+                }, 
+                "contour_right8": {
+                    "y": 395, 
+                    "x": 529
+                }, 
+                "right_eyebrow_right_corner": {
+                    "y": 251, 
+                    "x": 551
+                }, 
+                "right_eye_upper_left_quarter": {
+                    "y": 273, 
+                    "x": 512
+                }, 
+                "left_eyebrow_upper_middle": {
+                    "y": 248, 
+                    "x": 443
+                }, 
+                "right_eyebrow_upper_right_quarter": {
+                    "y": 242, 
+                    "x": 539
+                }, 
+                "nose_contour_left1": {
+                    "y": 288, 
+                    "x": 467
+                }, 
+                "nose_contour_left2": {
+                    "y": 319, 
+                    "x": 463
+                }, 
+                "nose_contour_left3": {
+                    "y": 339, 
+                    "x": 470
+                }, 
+                "nose_contour_right1": {
+                    "y": 286, 
+                    "x": 493
+                }, 
+                "nose_contour_right2": {
+                    "y": 316, 
+                    "x": 501
+                }, 
+                "mouth_lower_lip_bottom": {
+                    "y": 375, 
+                    "x": 481
+                }, 
+                "contour_right6": {
+                    "y": 367, 
+                    "x": 556
+                }, 
+                "nose_contour_right3": {
+                    "y": 337, 
+                    "x": 496
+                }, 
+                "left_eye_top": {
+                    "y": 277, 
+                    "x": 448
+                }, 
+                "mouth_upper_lip_right_contour3": {
+                    "y": 365, 
+                    "x": 498
+                }, 
+                "left_eyebrow_upper_right_quarter": {
+                    "y": 249, 
+                    "x": 456
+                }, 
+                "right_eye_upper_right_quarter": {
+                    "y": 271, 
+                    "x": 532
+                }, 
+                "mouth_upper_lip_bottom": {
+                    "y": 365, 
+                    "x": 481
+                }
+            }, 
+            "attributes": {
+                "gender": {
+                    "value": "Female"
+                }, 
+                "age": {
+                    "value": 25
+                }
+            }, 
+            "face_rectangle": {
+                "width": 166, 
+                "top": 242, 
+                "left": 415, 
+                "height": 166
+            }, 
+            "face_token": "c0531232e5ad4a47785deff3a41b81a4"  // 获取到测试上传的 token ; 可以与云端的 token 进行比较;
+        }
+    ]
+}
+
+ 
+
+FaceSet AddFace API:
+	请求:
+		curl -X POST "https://api-cn.faceplusplus.com/facepp/v3/faceset/addface" \
+		-F "api_key=Dec6OnZZQ3nKa7ZU0UDwcNe_xu1aeotd" \
+		-F "api_secret=nyhYWQ6potydeDJn9rL3gtFWoijU6wV4" \
+		-F "face_tokens=cc0531232e5ad4a47785deff3a41b81a4"
+
+
+            // 将此token 加入到FaceSet集合中
+
+	返回:
+		{"time_used": 43, "error_message": "MISSING_ARGUMENTS: faceset_token, outer_id", "request_id": "1489565415,b20454f0-b6a4-4d7d-9660-5193e52ebc8d"}
+
+			request_id:	用于区分每一次请求的唯一的字符串。
+			time_used:	整个请求所花费的时间，单位为毫秒。
+
+
+
+			error_message:	当请求失败时才会返回此字符串，具体返回内容见后续错误信息章节。否则此字段不存在。
+
+
+
+
+Compare API:
+	请求:
+		curl -X POST "https://api-cn.faceplusplus.com/facepp/v3/compare" \
+		-F "api_key=Dec6OnZZQ3nKa7ZU0UDwcNe_xu1aeotd" \
+		-F "api_secret=nyhYWQ6potydeDJn9rL3gtFWoijU6wV4" \
+		-F "image_file1=@maomao.jpeg" \
+		-F "face_token2=c0531232e5ad4a47785deff3a41b81a4"             
+
+
+	返回:
+		{
+		    "faces1": [
+		        {
+		            "face_rectangle": {
+		                "width": 166, 
+		                "top": 242, 
+		                "left": 415, 
+		                "height": 166
+		            }, 
+		            "face_token": "3b27b55ac07d221192e6b89b3e6ff2fc"  // 每次返回的 face_token 是不同的;   可用来标识每一次请求;
+		        }
+		    ], 
+		    "confidence": 96.46,            
+		    "image_id1": "rFqJbq3H+jXXLQI7Q/dDIw==", 
+		    "request_id": "1489565794,4fe12865-e42b-41f4-ad47-c7e264bfd7c8", 
+		    "time_used": 652, 
+		    "thresholds": {
+		        "1e-3": 65.3, 
+		        "1e-5": 76.5, 
+		        "1e-4": 71.8
+		    }
+		}
+
+		confidence : 比对结果置信度，范围 [0,100]，小数点后3位有效数字，数字越大表示两个人脸越可能是同一个人。
+
+
+
+
+ again:
+
+    curl -X POST "https://api-cn.faceplusplus.com/facepp/v3/compare" \
+        -F "api_key=Dec6OnZZQ3nKa7ZU0UDwcNe_xu1aeotd" \
+        -F "api_secret=nyhYWQ6potydeDJn9rL3gtFWoijU6wV4" \
+        -F "image_file1=@psb.jpeg" \
+        -F "face_token2=c0531232e5ad4a47785deff3a41b81a4"             
+
+
+        {
+            "faces1": [
+                {
+                    "face_rectangle": {
+                        "width": 158, 
+                        "top": 265, 
+                        "left": 211, 
+                        "height": 158
+                    }, 
+                    "face_token": "aecfc24fa64c61028e18c10d4e84973b"
+                }
+            ], 
+            "confidence": 88.014, 
+            "image_id1": "9hsvXDwJW/RTJaZFQtzzRg==", 
+            "request_id": "1489735677,2045a80f-1428-402a-8c15-81d2b0404db4", 
+            "time_used": 436, 
+            "thresholds": {
+                "1e-3": 65.3, 
+                "1e-5": 76.5, 
+                "1e-4": 71.8
+            }
+        }
+
+
+
+
+ curl -d "api_key=Dec6OnZZQ3nKa7ZU0UDwcNe_xu1aeotd&api_secret=nyhYWQ6potydeDJn9rL3gtFWoijU6wV4&image_file1=@maomao.jpeg&face_token2=c0531232e5ad4a47785deff3a41b81a4"  "https://api-cn.faceplusplus.com/facepp/v3/compare"
+
+{"time_used": 3, "error_message": "MISSING_ARGUMENTS: face_token1, image_url1, image_file1", "request_id": "1489809095,57151afb-b182-4f11-a102-2bdee93e8bb9"
+        
+      
+
+
+
+
+
+
+
+
+    关于Qt实现http post;
+        QT += network
+        QNetworkAccessManager::post; 即可实现;
+
+
+
+
+
+
+
+
+
