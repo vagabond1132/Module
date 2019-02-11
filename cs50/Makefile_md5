@@ -1,0 +1,2 @@
+json_main:./libs/md5.cpp ./src/md5_main.cpp
+	g++ ./libs/log_file.cpp  ./libs/md5.cpp ./src/md5_main.cpp -o ./bin/md5_main

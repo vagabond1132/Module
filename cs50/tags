@@ -1,0 +1,167 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BINDIR	Makefile	/^BINDIR=.\/bin\/$/;"	m
+BZF_MD5_H	include/md5.h	/^#define BZF_MD5_H$/;"	d
+Base64Decode	libs/3des.cpp	/^char *Base64Decode(char *src)  $/;"	f
+Base64Encode	libs/3des.cpp	/^char *Base64Encode(char *src,int srclen)  $/;"	f
+BitToByte	libs/3des.cpp	/^static void BitToByte(char *Out, const char *In, int bits)  $/;"	f	file:
+ByteToBit	libs/3des.cpp	/^static void ByteToBit(char *Out, const char *In, int bits)  $/;"	f	file:
+CBC	include/3des.h	/^#define CBC /;"	d
+CPPFILE	Makefile	/^CPPFILE=`find . -iname "*.cpp"`$/;"	m
+Clear	include/inifile.h	/^    void Clear()$/;"	f	class:IniFile
+CovertKey	libs/3des.cpp	/^int CovertKey(char *iKey, char *oKey)  $/;"	f
+Crypt3Des	libs/3des.cpp	/^int Crypt3Des(int type,char* in,char* key,char* out)  $/;"	f
+DECRYPT	include/3des.h	/^#define DECRYPT /;"	d
+DECRYPT	include/des.h	/^#define DECRYPT /;"	d
+DES	libs/3des.cpp	/^static void DES(char Out[8], const char In[8], const PSubKey pSubKey, int Type)  $/;"	f	file:
+DES_H	include/des.h	/^#define DES_H$/;"	d
+DeleteKey	include/inifile.h	/^    void DeleteKey(const char* pSect, const char* pKey)$/;"	f	class:IniFile
+DeleteSession	include/inifile.h	/^    void DeleteSession(const char* pSect)$/;"	f	class:IniFile
+Des	include/des.h	/^class Des$/;"	c
+Des	libs/des.cpp	/^Des::Des()$/;"	f	class:Des
+DesEncrypt	libs/des.cpp	/^void Des::DesEncrypt(short IsEn,const unsigned char* srcDatat, unsigned char* keyt,unsigned char* dstDatat)$/;"	f	class:Des
+DoFirstChange	libs/des.cpp	/^void Des::DoFirstChange(unsigned char *s)$/;"	f	class:Des
+DoKey	libs/des.cpp	/^void Des::DoKey(unsigned char *s,unsigned char *C,unsigned char *D)$/;"	f	class:Des
+DoLeft	libs/des.cpp	/^void Des::DoLeft(unsigned char *s, short n)$/;"	f	class:Des
+DoRight	libs/des.cpp	/^void Des::DoRight(unsigned char *s, short n)$/;"	f	class:Des
+ECB	include/3des.h	/^#define ECB /;"	d
+ENCRYPT	include/3des.h	/^#define ENCRYPT /;"	d
+ENCRYPT	include/des.h	/^#define ENCRYPT /;"	d
+E_Table	libs/3des.cpp	/^const char E_Table[48] =  $/;"	v
+E_expand	libs/des.cpp	/^void Des::E_expand(unsigned char * s, unsigned char * r)$/;"	f	class:Des
+F	libs/md5.cpp	/^inline MD5::uint4 MD5::F(uint4 x, uint4 y, uint4 z) {$/;"	f	class:MD5
+FF	libs/md5.cpp	/^inline void MD5::FF(uint4 &a, uint4 b, uint4 c, uint4 d, uint4 x, uint4 s, uint4 ac) {$/;"	f	class:MD5
+F_func	libs/3des.cpp	/^static void F_func(char In[32], const char Ki[48])  $/;"	f	file:
+Find_S	libs/des.cpp	/^unsigned char Des::Find_S(unsigned char * s, short ns)$/;"	f	class:Des
+G	libs/md5.cpp	/^inline MD5::uint4 MD5::G(uint4 x, uint4 y, uint4 z) {$/;"	f	class:MD5
+GG	libs/md5.cpp	/^inline void MD5::GG(uint4 &a, uint4 b, uint4 c, uint4 d, uint4 x, uint4 s, uint4 ac) {$/;"	f	class:MD5
+GetByte	libs/3des.cpp	/^unsigned char GetByte(char *s)  $/;"	f
+H	libs/md5.cpp	/^inline MD5::uint4 MD5::H(uint4 x, uint4 y, uint4 z) {$/;"	f	class:MD5
+HH	libs/md5.cpp	/^inline void MD5::HH(uint4 &a, uint4 b, uint4 c, uint4 d, uint4 x, uint4 s, uint4 ac) {$/;"	f	class:MD5
+I	libs/md5.cpp	/^inline MD5::uint4 MD5::I(uint4 x, uint4 y, uint4 z) {$/;"	f	class:MD5
+II	libs/md5.cpp	/^inline void MD5::II(uint4 &a, uint4 b, uint4 c, uint4 d, uint4 x, uint4 s, uint4 ac) {$/;"	f	class:MD5
+INCLUDEDIR	Makefile	/^INCLUDEDIR=.\/include\/$/;"	m
+IPR_Table	libs/3des.cpp	/^const char IPR_Table[64] =  $/;"	v
+IP_Table	libs/3des.cpp	/^const char IP_Table[64] =  $/;"	v
+IniAnalyze	include/inifile.h	/^    IniAnalyze(strMap& strMap, string strBool):pMap(&strMap)$/;"	f	struct:IniAnalyze
+IniAnalyze	include/inifile.h	/^struct IniAnalyze$/;"	s
+IniFile	include/inifile.h	/^    IniFile(const char* pIniFile, bool bCaseSensitive = true)$/;"	f	class:IniFile
+IniFile	include/inifile.h	/^class IniFile$/;"	c
+KEY_LEN_16	include/3des.h	/^#define KEY_LEN_16 /;"	d
+KEY_LEN_24	include/3des.h	/^#define KEY_LEN_24 /;"	d
+KEY_LEN_8	include/3des.h	/^#define KEY_LEN_8 /;"	d
+LIBSDIR	Makefile	/^LIBSDIR=.\/libs\/$/;"	m
+LOGDIR	Makefile	/^LOGDIR=.\/log\/$/;"	m
+LOGWARN	include/log_file.h	/^enum LOGWARN{$/;"	g
+LOOP_Table	libs/3des.cpp	/^const char LOOP_Table[16] =  $/;"	v
+MAX_FILEPATH	include/inifile.h	/^#define MAX_FILEPATH /;"	d
+MD5	include/md5.h	/^class MD5$/;"	c
+MD5	libs/md5.cpp	/^MD5::MD5()$/;"	f	class:MD5
+MD5	libs/md5.cpp	/^MD5::MD5(const std::string &text)$/;"	f	class:MD5
+MIDDLESTRING	include/inifile.h	/^const char* const MIDDLESTRING = "____****____";$/;"	v
+MyDesInit	libs/3des.cpp	/^void MyDesInit(int* cryptmode,int* padmode,char* cvec)  $/;"	f
+OBJDIR	Makefile	/^OBJDIR=.\/obj\/$/;"	m
+OFILE	Makefile	/^OFILE=`find . -iname "*.o"`$/;"	m
+OpenIni	include/inifile.h	/^    bool OpenIni(const char* pIniFile)$/;"	f	class:IniFile
+PAD_ISO_1	include/3des.h	/^#define PAD_ISO_1 /;"	d
+PAD_ISO_2	include/3des.h	/^#define PAD_ISO_2 /;"	d
+PAD_PKCS_7	include/3des.h	/^#define PAD_PKCS_7 /;"	d
+PC1_Table	libs/3des.cpp	/^const char PC1_Table[56] =  $/;"	v
+PC2_Table	libs/3des.cpp	/^const char PC2_Table[48] =  $/;"	v
+PRAWARNING	include/log_file.h	/^    PRAWARNING = 2,$/;"	e	enum:LOGWARN
+PSubKey	include/3des.h	/^    typedef char (*PSubKey)[16][48];  $/;"	t
+P_Table	libs/3des.cpp	/^const char P_Table[32] =  $/;"	v
+P_chang	libs/des.cpp	/^void Des::P_chang(unsigned char * s)$/;"	f	class:Des
+ReadBool	include/inifile.h	/^    bool ReadBool(const char* pSect, const char* pKey, bool bValue = false)$/;"	f	class:IniFile
+ReadDouble	include/inifile.h	/^    double ReadDouble(const char* pSect, const char* pKey, double fValue = 0)$/;"	f	class:IniFile
+ReadInteger	include/inifile.h	/^    int ReadInteger(const char* pSect, const char* pKey, int iValue = 0)$/;"	f	class:IniFile
+ReadString	include/inifile.h	/^    const char* ReadString(const char* pSect, const char* pKey, const char* defaultValue = "")$/;"	f	class:IniFile
+RotateL	libs/3des.cpp	/^static void RotateL(char *In, int len, int loop)  $/;"	f	file:
+Run1Des	libs/3des.cpp	/^int Run1Des(int bType, int bMode, const char *In, unsigned int in_len, const char *Key, unsigned int key_len, char* Out, unsigned int out_len, const char cvecstr[8])  $/;"	f
+Run3Des	libs/3des.cpp	/^int Run3Des(int bType, int bMode, const char *In, unsigned int in_len, const char *Key, unsigned int key_len, char* Out, unsigned int *out_len, const char cvecstr[8])  $/;"	f
+RunPad	libs/3des.cpp	/^int RunPad(int nType,const char* In,unsigned in_len,char* Out,int* padlen)  $/;"	f
+RunRsm	libs/3des.cpp	/^void RunRsm(char *Text)  $/;"	f
+S11	libs/md5.cpp	/^#define S11 /;"	d	file:
+S12	libs/md5.cpp	/^#define S12 /;"	d	file:
+S13	libs/md5.cpp	/^#define S13 /;"	d	file:
+S14	libs/md5.cpp	/^#define S14 /;"	d	file:
+S21	libs/md5.cpp	/^#define S21 /;"	d	file:
+S22	libs/md5.cpp	/^#define S22 /;"	d	file:
+S23	libs/md5.cpp	/^#define S23 /;"	d	file:
+S24	libs/md5.cpp	/^#define S24 /;"	d	file:
+S31	libs/md5.cpp	/^#define S31 /;"	d	file:
+S32	libs/md5.cpp	/^#define S32 /;"	d	file:
+S33	libs/md5.cpp	/^#define S33 /;"	d	file:
+S34	libs/md5.cpp	/^#define S34 /;"	d	file:
+S41	libs/md5.cpp	/^#define S41 /;"	d	file:
+S42	libs/md5.cpp	/^#define S42 /;"	d	file:
+S43	libs/md5.cpp	/^#define S43 /;"	d	file:
+S44	libs/md5.cpp	/^#define S44 /;"	d	file:
+SRCDIR	Makefile	/^SRCDIR=.\/src\/$/;"	m
+SYSWARNING	include/log_file.h	/^    SYSWARNING = 1,$/;"	e	enum:LOGWARN
+S_Box	libs/3des.cpp	/^const char S_Box[8][4][16] =  $/;"	v
+S_func	libs/3des.cpp	/^static void S_func(char Out[32], const char In[48])  $/;"	f	file:
+SetKey	libs/des.cpp	/^void Des::SetKey(short encrypt,unsigned char *C,unsigned char *D,short n,unsigned char *K)$/;"	f	class:Des
+SetSubKey	libs/3des.cpp	/^static void SetSubKey(PSubKey pSubKey, const char Key[8])  $/;"	f	file:
+Sfun_Tab	libs/des.cpp	/^unsigned char const Sfun_Tab[8][64] = {\/\/  S-1$/;"	v
+THREE_3DES	include/des.h	/^#define THREE_3DES /;"	d
+THreeDes	libs/des.cpp	/^int Des::THreeDes( const unsigned char* srcData, const unsigned char* key,unsigned char* dstData,short IsEn ,short type)$/;"	f	class:Des
+TWO_3DES	include/des.h	/^#define TWO_3DES /;"	d
+Transform	libs/3des.cpp	/^static void Transform(char *Out, const char *In, const char *Table, int len)  $/;"	f	file:
+Update	include/inifile.h	/^    bool Update()$/;"	f	class:IniFile
+WARNING	include/log_file.h	/^    WARNING  = 3,$/;"	e	enum:LOGWARN
+WriteBool	include/inifile.h	/^    void WriteBool(const char* pSect, const char* pKey, bool bValue)$/;"	f	class:IniFile
+WriteDouble	include/inifile.h	/^    void WriteDouble(const char* pSect, const char* pKey, double fValue)$/;"	f	class:IniFile
+WriteIni	include/inifile.h	/^    bool WriteIni(char* pIniFile)$/;"	f	class:IniFile
+WriteInteger	include/inifile.h	/^    void WriteInteger(const char* pSect, const char* pKey, int iValue)$/;"	f	class:IniFile
+WriteString	include/inifile.h	/^    void WriteString(const char* pSect, const char* pKey, const char* pValue)$/;"	f	class:IniFile
+Xor	libs/3des.cpp	/^static void Xor(char *InA, const char *InB, int len)  $/;"	f	file:
+_3DES__H_	include/3des.h	/^#define _3DES__H_ /;"	d
+_LOG_FILE_H_	include/log_file.h	/^#define _LOG_FILE_H_$/;"	d
+_inifile_H	include/inifile.h	/^#define _inifile_H$/;"	d
+bSens	include/inifile.h	/^    bool bSens;$/;"	m	struct:IniAnalyze
+bSensitive	include/inifile.h	/^    bool bSensitive;$/;"	m	class:IniFile
+blocksize	include/md5.h	/^  enum {blocksize = 64}; \/\/ VC6 won't eat a const static int here$/;"	e	enum:MD5::__anon1
+buffer	include/md5.h	/^  uint1 buffer[blocksize]; \/\/ bytes that didn't fit in last 64 byte chunk$/;"	m	class:MD5
+ch64	libs/3des.cpp	/^char*  ch64="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+\/";  $/;"	v
+count	include/md5.h	/^  uint4 count[2];   \/\/ 64bit counter for number of bits (lo, hi)$/;"	m	class:MD5
+decode	libs/md5.cpp	/^void MD5::decode(uint4 output[], const uint1 input[], size_type len)$/;"	f	class:MD5
+digest	include/md5.h	/^  uint1 digest[16]; \/\/ the result$/;"	m	class:MD5
+encode	libs/md5.cpp	/^void MD5::encode(uint1 output[], const uint4 input[], size_type len)$/;"	f	class:MD5
+f_fun	libs/des.cpp	/^void Des::f_fun(unsigned char *R,unsigned char *K,unsigned char *m)$/;"	f	class:Des
+finalize	libs/md5.cpp	/^MD5& MD5::finalize()$/;"	f	class:MD5
+finalized	include/md5.h	/^  bool finalized;$/;"	m	class:MD5
+first	include/inifile.h	/^    unsigned int first, last;$/;"	m	struct:IniAnalyze
+hexdigest	libs/md5.cpp	/^std::string MD5::hexdigest() const$/;"	f	class:MD5
+iniMap	include/inifile.h	/^    strMap iniMap;$/;"	m	class:IniFile
+init	libs/md5.cpp	/^void MD5::init()$/;"	f	class:MD5
+last	include/inifile.h	/^    unsigned int first, last;$/;"	m	struct:IniAnalyze
+log_file	libs/log_file.c	/^extern void  log_file(char *fmt, ...)$/;"	f
+log_mem	libs/log_file.c	/^extern void log_mem(char *fmt, ...)$/;"	f
+main	libs/log_file.c	/^int main()$/;"	f
+main	src/main.cpp	/^int main()$/;"	f
+md5	libs/md5.cpp	/^std::string MD5::md5() const$/;"	f	class:MD5
+operator ()	include/inifile.h	/^    void operator()(const string &sIni)$/;"	f	struct:IniAnalyze
+operator <<	libs/md5.cpp	/^std::ostream& operator<<(std::ostream& out, MD5 md5)$/;"	f
+pMap	include/inifile.h	/^    strMap *pMap;$/;"	m	struct:IniAnalyze
+rotate_left	libs/md5.cpp	/^inline MD5::uint4 MD5::rotate_left(uint4 x, int n) {$/;"	f	class:MD5
+sayBye	src/main.cpp	/^int sayBye()$/;"	f
+size_type	include/md5.h	/^  typedef unsigned int size_type; \/\/ must be 32bit$/;"	t	class:MD5
+state	include/md5.h	/^  uint4 state[4];   \/\/ digest so far$/;"	m	class:MD5
+strMap	include/inifile.h	/^typedef map<string, string, less<string> >strMap;$/;"	t
+strMapIt	include/inifile.h	/^typedef strMap::iterator strMapIt;$/;"	t
+strSect	include/inifile.h	/^    string strSect;$/;"	m	struct:IniAnalyze
+strTrim	include/inifile.h	/^static string strTrim(string aStr)$/;"	f
+strUpr	include/inifile.h	/^static char *strUpr(char *str)$/;"	f
+szIniFile	include/inifile.h	/^    char szIniFile[MAX_FILEPATH];$/;"	m	class:IniFile
+transform	libs/md5.cpp	/^void MD5::transform(const uint1 block[blocksize])$/;"	f	class:MD5
+uint1	include/md5.h	/^  typedef unsigned char uint1; \/\/  8bit$/;"	t	class:MD5
+uint4	include/md5.h	/^  typedef unsigned int uint4;  \/\/ 32bit$/;"	t	class:MD5
+update	libs/md5.cpp	/^void MD5::update(const char input[], size_type length)$/;"	f	class:MD5
+update	libs/md5.cpp	/^void MD5::update(const unsigned char input[], size_type length)$/;"	f	class:MD5
+~Des	libs/des.cpp	/^Des::~Des()$/;"	f	class:Des
+~IniFile	include/inifile.h	/^    ~IniFile(){};$/;"	f	class:IniFile
