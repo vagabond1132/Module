@@ -5,7 +5,6 @@
 extern int
 Ry_strncasecmp(const char *, const char *, size_t );
 
-
 extern int
 Ry_strcasecmp(const char *, const char *);
 
