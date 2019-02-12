@@ -1,0 +1,2 @@
+json_main:./libs/json.cpp ./src/json_main.cpp
+	g++ ./libs/json.cpp ./src/json_main.cpp -o ./bin/json_main
