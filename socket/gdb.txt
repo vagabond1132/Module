@@ -1,0 +1,239 @@
+Attaching to process 8810
+Reading symbols from /usr/local/postgresql/bin/postgres...done.
+Reading symbols from /lib64/libpthread.so.0...Reading symbols from /usr/lib/debug/usr/lib64/libpthread-2.17.so.debug...done.
+done.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+Loaded symbols for /lib64/libpthread.so.0
+Reading symbols from /lib64/libxml2.so.2...Reading symbols from /lib64/libxml2.so.2...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libxml2.so.2
+Reading symbols from /lib64/libssl.so.10...Reading symbols from /lib64/libssl.so.10...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libssl.so.10
+Reading symbols from /lib64/libcrypto.so.10...Reading symbols from /lib64/libcrypto.so.10...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libcrypto.so.10
+Reading symbols from /lib64/librt.so.1...Reading symbols from /usr/lib/debug/usr/lib64/librt-2.17.so.debug...done.
+done.
+Loaded symbols for /lib64/librt.so.1
+Reading symbols from /lib64/libdl.so.2...Reading symbols from /usr/lib/debug/usr/lib64/libdl-2.17.so.debug...done.
+done.
+Loaded symbols for /lib64/libdl.so.2
+Reading symbols from /lib64/libm.so.6...Reading symbols from /usr/lib/debug/usr/lib64/libm-2.17.so.debug...done.
+done.
+Loaded symbols for /lib64/libm.so.6
+Reading symbols from /lib64/libc.so.6...Reading symbols from /usr/lib/debug/usr/lib64/libc-2.17.so.debug...done.
+done.
+Loaded symbols for /lib64/libc.so.6
+Reading symbols from /lib64/ld-linux-x86-64.so.2...Reading symbols from /usr/lib/debug/usr/lib64/ld-2.17.so.debug...done.
+done.
+Loaded symbols for /lib64/ld-linux-x86-64.so.2
+Reading symbols from /lib64/libz.so.1...Reading symbols from /lib64/libz.so.1...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libz.so.1
+Reading symbols from /lib64/liblzma.so.5...Reading symbols from /lib64/liblzma.so.5...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/liblzma.so.5
+Reading symbols from /lib64/libgssapi_krb5.so.2...Reading symbols from /lib64/libgssapi_krb5.so.2...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libgssapi_krb5.so.2
+Reading symbols from /lib64/libkrb5.so.3...Reading symbols from /lib64/libkrb5.so.3...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libkrb5.so.3
+Reading symbols from /lib64/libcom_err.so.2...Reading symbols from /lib64/libcom_err.so.2...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libcom_err.so.2
+Reading symbols from /lib64/libk5crypto.so.3...Reading symbols from /lib64/libk5crypto.so.3...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libk5crypto.so.3
+Reading symbols from /lib64/libkrb5support.so.0...Reading symbols from /lib64/libkrb5support.so.0...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libkrb5support.so.0
+Reading symbols from /lib64/libkeyutils.so.1...Reading symbols from /lib64/libkeyutils.so.1...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libkeyutils.so.1
+Reading symbols from /lib64/libresolv.so.2...Reading symbols from /usr/lib/debug/usr/lib64/libresolv-2.17.so.debug...done.
+done.
+Loaded symbols for /lib64/libresolv.so.2
+Reading symbols from /lib64/libselinux.so.1...Reading symbols from /lib64/libselinux.so.1...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libselinux.so.1
+Reading symbols from /lib64/libpcre.so.1...Reading symbols from /lib64/libpcre.so.1...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libpcre.so.1
+Reading symbols from /usr/local/postgresql/lib/hg_job.so...(no debugging symbols found)...done.
+Loaded symbols for /usr/local/postgresql/lib/hg_job.so
+Reading symbols from /usr/local/postgresql/lib/libpq.so.5...done.
+Loaded symbols for /usr/local/postgresql/lib/libpq.so.5
+Reading symbols from /usr/local/postgresql/lib/worker_pg_pdr.so...(no debugging symbols found)...done.
+Loaded symbols for /usr/local/postgresql/lib/worker_pg_pdr.so
+Reading symbols from /usr/local/postgresql/lib/pg_stat_statements.so...(no debugging symbols found)...done.
+Loaded symbols for /usr/local/postgresql/lib/pg_stat_statements.so
+Reading symbols from /usr/local/postgresql/lib/pg_wait_sampling.so...(no debugging symbols found)...done.
+Loaded symbols for /usr/local/postgresql/lib/pg_wait_sampling.so
+Reading symbols from /lib64/libnss_files.so.2...Reading symbols from /usr/lib/debug/usr/lib64/libnss_files-2.17.so.debug...done.
+done.
+Loaded symbols for /lib64/libnss_files.so.2
+0x00007efccd830f53 in __select_nocancel () at ../sysdeps/unix/syscall-template.S:81
+81	T_PSEUDO (SYSCALL_SYMBOL, SYSCALL_NAME, SYSCALL_NARGS)
+Missing separate debuginfos, use: debuginfo-install keyutils-libs-1.5.8-3.el7.x86_64 krb5-libs-1.15.1-37.el7_6.x86_64 libcom_err-1.42.9-13.el7.x86_64 libselinux-2.5-14.1.el7.x86_64 libxml2-2.9.1-6.el7_2.3.x86_64 openssl-libs-1.0.2k-16.el7.x86_64 pcre-8.32-17.el7.x86_64 xz-libs-5.2.2-1.el7.x86_64 zlib-1.2.7-18.el7.x86_64
+Breakpoint 1 at 0x7efccd830f40: file ../sysdeps/unix/syscall-template.S, line 81.
+Starting program: /usr/local/postgresql/bin/postgres 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+
+Breakpoint 1, select () at ../sysdeps/unix/syscall-template.S:81
+81	T_PSEUDO (SYSCALL_SYMBOL, SYSCALL_NAME, SYSCALL_NARGS)
+pgstat_init () at pgstat.c:506
+506				if (sel_res >= 0 || errno != EINTR)
+509			if (sel_res < 0)
+518			if (sel_res == 0 || !FD_ISSET(pgStatSock, &rset))
+534			test_byte++;			/* just make sure variable is changed */
+537			if (recv(pgStatSock, &test_byte, 1, 0) != 1)
+#0  pgstat_init () at pgstat.c:537
+537			if (recv(pgStatSock, &test_byte, 1, 0) != 1)
+#0  pgstat_init () at pgstat.c:537
+537			if (recv(pgStatSock, &test_byte, 1, 0) != 1)
+#0  pgstat_init () at pgstat.c:537
+537			if (recv(pgStatSock, &test_byte, 1, 0) != 1)
+#0  pgstat_init () at pgstat.c:537
+537			if (recv(pgStatSock, &test_byte, 1, 0) != 1)
+Continuing.
+Detaching after fork from child process 4189.
+
+Breakpoint 1, select () at ../sysdeps/unix/syscall-template.S:81
+81	T_PSEUDO (SYSCALL_SYMBOL, SYSCALL_NAME, SYSCALL_NARGS)
+Continuing.
+Detaching after fork from child process 4190.
+
+Breakpoint 1, select () at ../sysdeps/unix/syscall-template.S:81
+81	T_PSEUDO (SYSCALL_SYMBOL, SYSCALL_NAME, SYSCALL_NARGS)
+Continuing.
+Detaching after fork from child process 4205.
+Detaching after fork from child process 4206.
+Detaching after fork from child process 4207.
+Detaching after fork from child process 4208.
+Detaching after fork from child process 4209.
+Detaching after fork from child process 4210.
+Detaching after fork from child process 4211.
+Detaching after fork from child process 4212.
+Detaching after fork from child process 4255.
+
+Breakpoint 1, select () at ../sysdeps/unix/syscall-template.S:81
+81	T_PSEUDO (SYSCALL_SYMBOL, SYSCALL_NAME, SYSCALL_NARGS)
+Continuing.
+
+Program received signal SIGINT, Interrupt.
+0x00007ffff679bf53 in __select_nocancel () at ../sysdeps/unix/syscall-template.S:81
+81	T_PSEUDO (SYSCALL_SYMBOL, SYSCALL_NAME, SYSCALL_NARGS)
+Continuing.
+
+Program received signal SIGINT, Interrupt.
+0x00007ffff679bf53 in __select_nocancel () at ../sysdeps/unix/syscall-template.S:81
+81	T_PSEUDO (SYSCALL_SYMBOL, SYSCALL_NAME, SYSCALL_NARGS)
+Continuing.
+
+Program received signal SIGINT, Interrupt.
+0x00007ffff679bf53 in __select_nocancel () at ../sysdeps/unix/syscall-template.S:81
+81	T_PSEUDO (SYSCALL_SYMBOL, SYSCALL_NAME, SYSCALL_NARGS)
+Continuing.
+
+Program received signal SIGINT, Interrupt.
+0x00007ffff679bf53 in __select_nocancel () at ../sysdeps/unix/syscall-template.S:81
+81	T_PSEUDO (SYSCALL_SYMBOL, SYSCALL_NAME, SYSCALL_NARGS)
+Detaching from program: /usr/local/postgresql/bin/postgres, process 4167
+Attaching to process 4167
+Reading symbols from /usr/local/postgresql/bin/postgres...done.
+Reading symbols from /lib64/libpthread.so.0...Reading symbols from /usr/lib/debug/usr/lib64/libpthread-2.17.so.debug...done.
+done.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+Loaded symbols for /lib64/libpthread.so.0
+Reading symbols from /lib64/libxml2.so.2...Reading symbols from /lib64/libxml2.so.2...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libxml2.so.2
+Reading symbols from /lib64/libssl.so.10...Reading symbols from /lib64/libssl.so.10...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libssl.so.10
+Reading symbols from /lib64/libcrypto.so.10...Reading symbols from /lib64/libcrypto.so.10...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libcrypto.so.10
+Reading symbols from /lib64/librt.so.1...Reading symbols from /usr/lib/debug/usr/lib64/librt-2.17.so.debug...done.
+done.
+Loaded symbols for /lib64/librt.so.1
+Reading symbols from /lib64/libdl.so.2...Reading symbols from /usr/lib/debug/usr/lib64/libdl-2.17.so.debug...done.
+done.
+Loaded symbols for /lib64/libdl.so.2
+Reading symbols from /lib64/libm.so.6...Reading symbols from /usr/lib/debug/usr/lib64/libm-2.17.so.debug...done.
+done.
+Loaded symbols for /lib64/libm.so.6
+Reading symbols from /lib64/libc.so.6...Reading symbols from /usr/lib/debug/usr/lib64/libc-2.17.so.debug...done.
+done.
+Loaded symbols for /lib64/libc.so.6
+Reading symbols from /lib64/ld-linux-x86-64.so.2...Reading symbols from /usr/lib/debug/usr/lib64/ld-2.17.so.debug...done.
+done.
+Loaded symbols for /lib64/ld-linux-x86-64.so.2
+Reading symbols from /lib64/libz.so.1...Reading symbols from /lib64/libz.so.1...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libz.so.1
+Reading symbols from /lib64/liblzma.so.5...Reading symbols from /lib64/liblzma.so.5...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/liblzma.so.5
+Reading symbols from /lib64/libgssapi_krb5.so.2...Reading symbols from /lib64/libgssapi_krb5.so.2...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libgssapi_krb5.so.2
+Reading symbols from /lib64/libkrb5.so.3...Reading symbols from /lib64/libkrb5.so.3...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libkrb5.so.3
+Reading symbols from /lib64/libcom_err.so.2...Reading symbols from /lib64/libcom_err.so.2...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libcom_err.so.2
+Reading symbols from /lib64/libk5crypto.so.3...Reading symbols from /lib64/libk5crypto.so.3...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libk5crypto.so.3
+Reading symbols from /lib64/libkrb5support.so.0...Reading symbols from /lib64/libkrb5support.so.0...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libkrb5support.so.0
+Reading symbols from /lib64/libkeyutils.so.1...Reading symbols from /lib64/libkeyutils.so.1...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libkeyutils.so.1
+Reading symbols from /lib64/libresolv.so.2...Reading symbols from /usr/lib/debug/usr/lib64/libresolv-2.17.so.debug...done.
+done.
+Loaded symbols for /lib64/libresolv.so.2
+Reading symbols from /lib64/libselinux.so.1...Reading symbols from /lib64/libselinux.so.1...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libselinux.so.1
+Reading symbols from /lib64/libpcre.so.1...Reading symbols from /lib64/libpcre.so.1...(no debugging symbols found)...done.
+(no debugging symbols found)...done.
+Loaded symbols for /lib64/libpcre.so.1
+Reading symbols from /usr/local/postgresql/lib/hg_job.so...(no debugging symbols found)...done.
+Loaded symbols for /usr/local/postgresql/lib/hg_job.so
+Reading symbols from /usr/local/postgresql/lib/libpq.so.5...done.
+Loaded symbols for /usr/local/postgresql/lib/libpq.so.5
+Reading symbols from /usr/local/postgresql/lib/worker_pg_pdr.so...(no debugging symbols found)...done.
+Loaded symbols for /usr/local/postgresql/lib/worker_pg_pdr.so
+Reading symbols from /usr/local/postgresql/lib/pg_stat_statements.so...(no debugging symbols found)...done.
+Loaded symbols for /usr/local/postgresql/lib/pg_stat_statements.so
+Reading symbols from /usr/local/postgresql/lib/pg_wait_sampling.so...(no debugging symbols found)...done.
+Loaded symbols for /usr/local/postgresql/lib/pg_wait_sampling.so
+Reading symbols from /lib64/libnss_files.so.2...Reading symbols from /usr/lib/debug/usr/lib64/libnss_files-2.17.so.debug...done.
+done.
+Loaded symbols for /lib64/libnss_files.so.2
+0x00007ffff679bf53 in __select_nocancel () at ../sysdeps/unix/syscall-template.S:81
+81	T_PSEUDO (SYSCALL_SYMBOL, SYSCALL_NAME, SYSCALL_NARGS)
+Missing separate debuginfos, use: debuginfo-install keyutils-libs-1.5.8-3.el7.x86_64 krb5-libs-1.15.1-37.el7_6.x86_64 libcom_err-1.42.9-13.el7.x86_64 libselinux-2.5-14.1.el7.x86_64 libxml2-2.9.1-6.el7_2.3.x86_64 openssl-libs-1.0.2k-16.el7.x86_64 pcre-8.32-17.el7.x86_64 xz-libs-5.2.2-1.el7.x86_64 zlib-1.2.7-18.el7.x86_64
+Continuing.
+
+Program received signal SIGINT, Interrupt.
+0x00007ffff679bf53 in __select_nocancel () at ../sysdeps/unix/syscall-template.S:81
+81	T_PSEUDO (SYSCALL_SYMBOL, SYSCALL_NAME, SYSCALL_NARGS)
+Breakpoint 1 at 0x7ffff679bf40: file ../sysdeps/unix/syscall-template.S, line 81.
+Quit
+Note: breakpoint 1 also set at pc 0x7ffff679bf40.
+Breakpoint 2 at 0x7ffff679bf40: file ../sysdeps/unix/syscall-template.S, line 81.
+Note: breakpoints 1 and 2 also set at pc 0x7ffff679bf40.
+Breakpoint 3 at 0x7ffff679bf40: file ../sysdeps/unix/syscall-template.S, line 81.
+Note: breakpoints 1, 2 and 3 also set at pc 0x7ffff679bf40.
+Breakpoint 4 at 0x7ffff679bf40: file ../sysdeps/unix/syscall-template.S, line 81.
+Detaching from program: /usr/local/postgresql/bin/postgres, process 4167
